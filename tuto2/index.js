@@ -29,11 +29,13 @@ const getAllNews = $('.gs-c-promo.nw-c-promo')
 linkAtt = getAllNews.find('.gs-c-promo-heading__title').first()
  
   
-        console.log(linkAtt.first().text())
 
+     //   console.log(linkAtt.first().text())
 
+     //verder proberen om elke headline onder elkaar te zetten...lukt nog niet...lees de info ivm cheerio
+let pipo = $("li", "ul" ).text('.gs-c-promo-heading')
 
-
+console.log(pipo)
 
 
 const getImage = getAllNews.find('.gs-c-promo-image').first().first().find('img')
