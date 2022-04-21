@@ -3,9 +3,9 @@ var bodyParser = require("body-parser"); //middleware = between requestdata and 
 const cors = require("cors"); //middleware
 const cheerio = require("cheerio"); //DOM object maken
 const axios = require('axios').default //get request
-
+const dotenv = require('dotenv')
 const app = express();
-
+dotenv.config()
 app.use(cors())
 app.use(bodyParser.json())
 
@@ -54,3 +54,4 @@ image: getImage.attr('src')
 app.listen(4000, ()=>{
     console.log("server running...")
 })
+console.log(process.env.PORT)
