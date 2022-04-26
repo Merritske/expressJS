@@ -1,16 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function navbar() {
-      let circle = document.getElementsByClassName("circle")
-    function transform(){
+function Navbar() {
+
+    const [animate, setAnimate] = useState(true)
+
+   let circle = document.getElementsByClassName("circle")
+
+    function transform(e){
+        console.log(e.target.innerText)
+        console.log(animate)
+   if(animate){
+for(let x = 0; x<circle.length; x++){
+
+    if(circle[x].innerText=== e.target.innerText){
+       circle[x].classList.add("dropbal")
+       circle[x].classList.remove("upbal")
    
-        circle = circle[0]
-        circle.classList.add("dropbal")
+    }else {
+     circle[x].classList.remove("dropbal") 
+    
+         circle[x].classList.add("upbal")
+    } 
+    
+     
+} 
+      console.log(animate)
+   }
+          setAnimate(true)
 
     }
   
-    circle = circle[0]
-circle.classList.remove("dropbal")
+
   return (
     <div>
 <ul className='navbar'>
@@ -41,4 +61,4 @@ Home
   )
 }
 
-export default navbar
+export default Navbar

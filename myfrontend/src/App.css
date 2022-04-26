@@ -44,8 +44,8 @@
   left: 20px;
 }
 .navbar >li{
- letter-spacing: -13px;
-
+ letter-spacing: -12px;
+text-align: center;
 }
 
 .circle{
@@ -55,27 +55,32 @@
    height: 45px;
    width: 45px; 
     background-color: red; 
+    position: relative;
    /* position: absolute;
    left: 200px;
    top: 50px; */
 }
-/* @keyframes dropbal{
+ @keyframes dropbal{
   0%{
- transform: translateY(50px);
-   
-  }
- 50%{
-            background-color: transparent;
- letter-spacing: normal; 
- transform: translateY(150px);
- 
- }
-  
-  100%{
+    background-color: red; 
+ letter-spacing: -13px;
+transform: translateY(0px);
 
- top: 150px;
   }
-} */
+  30%{
+    background-color: rgba(red, 0,0, 0.8); 
+  
+  }
+80%{
+     background-color: transparent;
+}
+  100%{ 
+  
+
+transform: translateY(150px);
+ letter-spacing: normal;
+  }
+} 
 
 .navbar>li:hover{
 cursor: pointer;
@@ -83,12 +88,35 @@ cursor: pointer;
 
 }
 .dropbal{
-  /* animation: dropbal;
-  animation-duration: 1s; */
-
-  background-color: transparent;
-letter-spacing: normal; 
+  animation-name: dropbal;
+  animation-duration: 5s; 
+  letter-spacing: normal;
 transform: translateY(150px);
+  background-color: transparent;
 border-color: transparent;
-  
+
 }
+@keyframes upbal{
+  0%{
+    border-color: transparent;
+    transform: translateY(150px);
+  letter-spacing: normal; 
+   background-color: transparent;
+
+  }
+  20%{
+  
+  }
+  100%{ 
+     letter-spacing: -13px;
+ background-color: red;
+ 
+  }
+}
+.upbal{
+  animation-name: upbal;
+  animation-duration: 2s;
+
+}
+
+
