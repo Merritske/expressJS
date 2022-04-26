@@ -1,0 +1,94 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.navbar{
+  list-style-type: none;
+  padding: 20px;
+  display: flex;
+  position: absolute;
+  top: 50px;
+  left: 20px;
+}
+.navbar >li{
+ letter-spacing: -13px;
+
+}
+
+.circle{
+  margin-right: 1em;
+  border: 3px solid red; 
+   border-radius: 50%;
+   height: 45px;
+   width: 45px; 
+    background-color: red; 
+   /* position: absolute;
+   left: 200px;
+   top: 50px; */
+}
+/* @keyframes dropbal{
+  0%{
+ transform: translateY(50px);
+   
+  }
+ 50%{
+            background-color: transparent;
+ letter-spacing: normal; 
+ transform: translateY(150px);
+ 
+ }
+  
+  100%{
+
+ top: 150px;
+  }
+} */
+
+.navbar>li:hover{
+cursor: pointer;
+
+
+}
+.dropbal{
+  /* animation: dropbal;
+  animation-duration: 1s; */
+
+  background-color: transparent;
+letter-spacing: normal; 
+transform: translateY(150px);
+border-color: transparent;
+  
+}
