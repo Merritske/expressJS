@@ -32,7 +32,7 @@ linkAtt = getAllNews.find('.gs-c-promo-heading__title').first()
 
      //   console.log(linkAtt.first().text())
 
-     //verder proberen om elke headline onder elkaar te zetten...lukt nog niet...lees de info ivm cheerio
+     //verder proberen om elke headline onder elkaar te zetten...lukt nog niet...lees de info ivm cheerio?
 let pipo = $("li", "ul" ).text('.gs-c-promo-heading')
 
 console.log(pipo)
