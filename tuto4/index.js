@@ -5,13 +5,14 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 const Post = require('./models/Post');
-
-const User = require('./models/User')
+const dotenv = require("dotenv");
+dotenv.config();
+const User = require('./models/User');
 const jwt = require('jsonwebtoken'); //for login
 
 //set up middleware to be able to read express body
 app.use(bodyParser.json())
-mongoose.connect('mongodb+srv://admin:AdminFront.22@cluster1.pwjqz.mongodb.net/tuto4?retryWrites=true&w=majority', (err) => {
+mongoose.connect(process.env.DATA_URL, (err) => {
     if (err) {
         console.log(err)
     } else {
