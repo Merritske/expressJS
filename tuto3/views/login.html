@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InlogPage</title>
+</head>
+<body>
+    <div>
+        <form action="" method="post" id="login-form" style="padding: 20px;display: flex; flex-direction: column;">
+            <label for="user">username</label>
+            <input type="text" name="username" id="user" >
+            <label for="password">password</label>
+            <input type="password" name="password" id="password">
+
+            <input type="submit">
+        </form>
+        <form method="post" id="'changepassword">
+            <label for="password">Change password</label>
+            <input type="password" id="passwordCH">
+            <input type="submit" >
+        </form>
+    </div>
+
+<script>
+    const form = document.getElementById('reg-form')
+    form.addEventListener('submit', loginUser )
+
+    function loginUser(event){
+        event.preventDefault()
+        const user = document.getElementById('user')
+        const password = document.getElementById('password')
+        fetch('api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username,
+                password
+            })
+        }).then((res)=>{
+            res.json()
+        })
+        if(result.status == "ok"){
+            console.log('got token', result.data)
+            localStorage.setItem("token", JSON.stringify(result.data))
+        }else{
+            alert(result.error)
+        }
+    }
+
+    const changepassword = document.getElementById('changepassword')
+    changepassword.addEventListener('submit', loginUser )
+
+    function loginUser(event){
+        event.preventDefault()
+    
+        const password = document.getElementById('passwordCH')
+        fetch('api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                password
+            })
+        }).then((res)=>{
+            res.json()
+        })
+        if(result.status == "ok"){
+            console.log('got token', result.data)
+       
+        }else{
+            alert(result.error)
+        }
+    }
+</script>
+    <script src="../index.js"></script>
+</body>
+</html>

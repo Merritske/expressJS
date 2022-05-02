@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegisterPage</title>
+</head>
+<body>
+    <div>
+        <form action="" method="post" id="reg-form" style="padding: 20px;display: flex; flex-direction: column;">
+            <label for="user">username</label>
+            <input type="text" name="username" id="user" >
+            <label for="password">password</label>
+            <input type="password" name="password" id="password">
+            <label for="straat">straat</label>
+            <input type="text" name="straat" id="straat">
+    <label for="nummer">nummer</label>
+            <input type="text" name="nummer" id="nummer">
+           <label for="postcode">postcode</label>
+            <input type="text" name="postcode" id="postcode">
+                   <label for="plaats">plaats</label>  
+            <input type="text" name="plaats" id="plaats">
+            <input type="submit">
+        </form>
+    </div>
+
+<script>
+    const form = document.getElementById('reg-form')
+    form.addEventListener('submit', registerUser )
+
+    function registerUser(event){
+        event.preventDefault()
+        const user = document.getElementById('user')
+        const password = document.getElementById('password')
+        
+        fetch('api/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user,
+                password,
+                adres
+            })
+        }).then((res)=>{
+            res.json()
+            console.log(res)
+        })
+    }
+</script>
+    <script src="../index.js"></script>
+</body>
+</html>
